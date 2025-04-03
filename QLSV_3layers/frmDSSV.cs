@@ -12,7 +12,7 @@ namespace QLSV_3layers
 {
     public partial class frmDSSV : Form
     {
-        
+
 
         public frmDSSV()
         {
@@ -39,7 +39,7 @@ namespace QLSV_3layers
             });
             try
             {
-                var dt = new Database().SelectData("SelectAllSinhVien",IstPara);
+                var dt = new Database().SelectData("SelectAllSinhVien", IstPara);
                 dgvSinhVien.DataSource = dt;
                 dgvSinhVien.Columns["masinhvien"].HeaderText = "Mã SV";
                 dgvSinhVien.Columns["hoten"].HeaderText = "Họ tên";
@@ -54,7 +54,7 @@ namespace QLSV_3layers
             {
                 MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message);
             }
-           
+
         }
 
         private void dgvSinhVien_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -118,8 +118,13 @@ namespace QLSV_3layers
 
         private void txtTuKhoa_TextChanged(object sender, EventArgs e)
         {
-           
-                LoadDSSV(txtTuKhoa.Text.Trim());            
+
+            LoadDSSV(txtTuKhoa.Text.Trim());
+        }
+
+        private void dgvSinhVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

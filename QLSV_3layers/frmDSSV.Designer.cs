@@ -52,6 +52,7 @@
             dgvSinhVien.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvSinhVien.Size = new Size(1051, 454);
             dgvSinhVien.TabIndex = 0;
+            dgvSinhVien.CellContentClick += dgvSinhVien_CellContentClick;
             dgvSinhVien.CellContentDoubleClick += dgvSinhVien_CellContentDoubleClick;
             // 
             // label1

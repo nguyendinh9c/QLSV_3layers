@@ -76,7 +76,7 @@ namespace QLSV_3layers
             if (string.IsNullOrEmpty(msv))
             {
                 sql = "ThemMoiSV";
-                
+
             }
             else
             {
@@ -134,9 +134,9 @@ namespace QLSV_3layers
             });
 
             var rs = new Database().ExeCute(sql, IstPara);
-            if(rs == 1)
+            if (rs == 1)
             {
-             if(string.IsNullOrEmpty(msv))
+                if (string.IsNullOrEmpty(msv))
                 {
                     MessageBox.Show("Thêm mới sinh viên thành công");
                 }
@@ -148,10 +148,15 @@ namespace QLSV_3layers
             }
             else
             {
-                MessageBox.Show("Thực thi thất bại");  
+                MessageBox.Show("Thực thi thất bại");
             }
-            
-                
+
+
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

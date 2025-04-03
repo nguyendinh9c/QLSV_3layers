@@ -221,6 +221,7 @@
             btnHuy.TabIndex = 20;
             btnHuy.Text = "Hủy";
             btnHuy.UseVisualStyleBackColor = true;
+            btnHuy.Click += btnHuy_Click;
             // 
             // mtbNgaysinh
             // 
