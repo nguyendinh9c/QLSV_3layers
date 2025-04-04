@@ -41,9 +41,9 @@
             // 
             dgvSinhVien.AllowUserToAddRows = false;
             dgvSinhVien.AllowUserToDeleteRows = false;
+            dgvSinhVien.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvSinhVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvSinhVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvSinhVien.Dock = DockStyle.Bottom;
             dgvSinhVien.Location = new Point(0, 68);
             dgvSinhVien.MultiSelect = false;
             dgvSinhVien.Name = "dgvSinhVien";
@@ -57,6 +57,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Location = new Point(372, 32);
             label1.Name = "label1";
@@ -66,6 +67,7 @@
             // 
             // txtTuKhoa
             // 
+            txtTuKhoa.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             txtTuKhoa.Location = new Point(456, 25);
             txtTuKhoa.Name = "txtTuKhoa";
             txtTuKhoa.Size = new Size(213, 27);
@@ -74,6 +76,7 @@
             // 
             // btnLammoi
             // 
+            btnLammoi.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnLammoi.Location = new Point(688, 24);
             btnLammoi.Name = "btnLammoi";
             btnLammoi.Size = new Size(94, 29);
@@ -84,6 +87,7 @@
             // 
             // btnThemmoi
             // 
+            btnThemmoi.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnThemmoi.Location = new Point(801, 23);
             btnThemmoi.Name = "btnThemmoi";
             btnThemmoi.Size = new Size(94, 29);
@@ -94,6 +98,7 @@
             // 
             // btnXoa
             // 
+            btnXoa.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnXoa.Location = new Point(912, 23);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(94, 29);

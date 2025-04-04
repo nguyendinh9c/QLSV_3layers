@@ -46,16 +46,16 @@
             // 
             // dgvDSGV
             // 
+            dgvDSGV.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvDSGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDSGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvDSGV.Columns.AddRange(new DataGridViewColumn[] { magiaovien, hoten, ngaysinh, gt, dienthoai, email, diachi, btnDelete });
-            dgvDSGV.Dock = DockStyle.Bottom;
-            dgvDSGV.Location = new Point(0, 94);
+            dgvDSGV.Location = new Point(0, 117);
             dgvDSGV.MultiSelect = false;
             dgvDSGV.Name = "dgvDSGV";
             dgvDSGV.RowHeadersWidth = 51;
             dgvDSGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvDSGV.Size = new Size(1056, 356);
+            dgvDSGV.Size = new Size(1056, 333);
             dgvDSGV.TabIndex = 0;
             dgvDSGV.CellClick += dgvDSGV_CellClick;
             dgvDSGV.CellDoubleClick += dgvDSGV_CellDoubleClick;
@@ -119,6 +119,7 @@
             // 
             // btnTimkiem
             // 
+            btnTimkiem.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnTimkiem.Location = new Point(593, 25);
             btnTimkiem.Name = "btnTimkiem";
             btnTimkiem.Size = new Size(94, 29);
@@ -129,6 +130,7 @@
             // 
             // btnThemmoi
             // 
+            btnThemmoi.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnThemmoi.Location = new Point(693, 25);
             btnThemmoi.Name = "btnThemmoi";
             btnThemmoi.Size = new Size(94, 29);
@@ -139,6 +141,7 @@
             // 
             // txtTimkiem
             // 
+            txtTimkiem.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             txtTimkiem.Location = new Point(390, 27);
             txtTimkiem.Name = "txtTimkiem";
             txtTimkiem.Size = new Size(188, 27);
@@ -146,6 +149,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Location = new Point(314, 30);
             label1.Name = "label1";

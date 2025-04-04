@@ -40,9 +40,9 @@
             // 
             dgvDSMH.AllowUserToAddRows = false;
             dgvDSMH.AllowUserToDeleteRows = false;
+            dgvDSMH.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvDSMH.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDSMH.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDSMH.Dock = DockStyle.Bottom;
             dgvDSMH.Location = new Point(0, 115);
             dgvDSMH.MultiSelect = false;
             dgvDSMH.Name = "dgvDSMH";
@@ -55,6 +55,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Location = new Point(328, 60);
             label1.Name = "label1";
@@ -65,6 +66,7 @@
             // 
             // txtTimkiem
             // 
+            txtTimkiem.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             txtTimkiem.Location = new Point(396, 57);
             txtTimkiem.Name = "txtTimkiem";
             txtTimkiem.Size = new Size(176, 27);
@@ -72,6 +74,7 @@
             // 
             // btnTimkiem
             // 
+            btnTimkiem.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnTimkiem.Location = new Point(587, 56);
             btnTimkiem.Name = "btnTimkiem";
             btnTimkiem.Size = new Size(94, 29);
@@ -82,6 +85,7 @@
             // 
             // btnThemmoi
             // 
+            btnThemmoi.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnThemmoi.Location = new Point(687, 57);
             btnThemmoi.Name = "btnThemmoi";
             btnThemmoi.Size = new Size(94, 29);
