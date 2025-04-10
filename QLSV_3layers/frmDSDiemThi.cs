@@ -16,5 +16,10 @@ namespace QLSV_3layers
         {
             InitializeComponent();
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

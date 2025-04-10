@@ -12,7 +12,7 @@ namespace QLSV_3layers
 {
     public class Database
     {
-        private string connetionString = "Data Source=DESKTOP-6KVLN11;Initial Catalog=QLSV;Integrated Security=True;Trust Server Certificate=True";
+        private string connetionString = "Data Source=DUONG-THE-INDIE\\SQLEXPRESS;Initial Catalog=QLSV_NEW;Integrated Security=True;Trust Server Certificate=True";
         private Microsoft.Data.SqlClient.SqlConnection conn;
         private DataTable dt;
         private SqlCommand cmd;

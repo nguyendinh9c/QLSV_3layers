@@ -6,10 +6,40 @@ namespace QLSV_3layers
         {
             InitializeComponent();
         }
+        private string taikhoan;
+        private string loaitk;
         private void frmMain_Load(object sender, EventArgs e)
         {
-            frmWelcome f = new frmWelcome();
-            AddForm(f);
+            var d = new frmDangNhap();
+            d.ShowDialog();
+
+            taikhoan = d.tendangnhap;
+            loaitk = d.loaitk;
+            if (loaitk.Equals("admin"))
+            {
+                chamdiemToolStripMenuItem.Visible = false;
+                dangkyToolStripMenuItem.Visible = false;
+
+            }
+            else
+            {
+                quanlyToolStripMenuItem.Visible = false;
+                if (loaitk.Equals("gv"))
+                {
+                    chamdiemToolStripMenuItem.Visible = true;
+                    dangkyToolStripMenuItem.Visible = false;
+
+                }
+                else
+                {
+                    chamdiemToolStripMenuItem.Visible = false;
+                    dangkyToolStripMenuItem.Visible = true;
+
+                }
+
+                frmWelcome f = new frmWelcome();
+                AddForm(f);
+            }
         }
 
         private void AddForm(Form f)
@@ -48,15 +78,28 @@ namespace QLSV_3layers
             AddForm(f);
         }
 
-        private void diemThiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmDSDiemThi f = new frmDSDiemThi();
-            AddForm(f);
-        }
+
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void lopHocToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDsLopHoc f = new frmDsLopHoc();
+            AddForm(f);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dangkyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new frmDsMHDaDky(taikhoan);
+            AddForm(f);
         }
     }
 }

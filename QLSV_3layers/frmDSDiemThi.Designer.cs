@@ -85,6 +85,7 @@
             btnThem.TabIndex = 4;
             btnThem.Text = "Thêm mới";
             btnThem.UseVisualStyleBackColor = true;
+            btnThem.Click += btnThem_Click;
             // 
             // cbbMonHoc
             // 
