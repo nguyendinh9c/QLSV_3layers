@@ -51,6 +51,7 @@
             dgvLopHoc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvLopHoc.Size = new Size(993, 350);
             dgvLopHoc.TabIndex = 13;
+            dgvLopHoc.CellContentClick += dgvLopHoc_CellContentClick;
             dgvLopHoc.CellDoubleClick += dgvLopHoc_CellDoubleClick;
             // 
             // btnThem

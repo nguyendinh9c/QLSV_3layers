@@ -1,4 +1,4 @@
-namespace QLSV_3layers
+﻿namespace QLSV_3layers
 {
     public partial class frmMain : Form
     {
@@ -17,8 +17,8 @@ namespace QLSV_3layers
             loaitk = d.loaitk;
             if (loaitk.Equals("admin"))
             {
-                chamdiemToolStripMenuItem.Visible = false;
-                dangkyToolStripMenuItem.Visible = false;
+                quanlylopToolStripMenuItem.Visible = false;
+                chucNangToolStripMenuItem.Visible = false;
 
             }
             else
@@ -26,14 +26,14 @@ namespace QLSV_3layers
                 quanlyToolStripMenuItem.Visible = false;
                 if (loaitk.Equals("gv"))
                 {
-                    chamdiemToolStripMenuItem.Visible = true;
-                    dangkyToolStripMenuItem.Visible = false;
+                    quanlylopToolStripMenuItem.Visible = true;
+                    chucNangToolStripMenuItem.Visible = false;
 
                 }
                 else
                 {
-                    chamdiemToolStripMenuItem.Visible = false;
-                    dangkyToolStripMenuItem.Visible = true;
+                    quanlylopToolStripMenuItem.Visible = false;
+                    chucNangToolStripMenuItem.Visible = true;
 
                 }
 
@@ -100,6 +100,19 @@ namespace QLSV_3layers
         {
             var f = new frmDsMHDaDky(taikhoan);
             AddForm(f);
+        }
+
+        private void traCuuDiemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //new frmKetQuaHocTap(taikhoan).ShowDialog();
+            var fkq = new frmKetQuaHocTap(taikhoan);
+            AddForm(fkq);
+        }
+
+        private void quanlylopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var fql = new frmQuanLyLop(taikhoan);
+            AddForm(fql);
         }
     }
 }

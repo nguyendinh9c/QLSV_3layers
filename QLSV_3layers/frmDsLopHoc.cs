@@ -50,11 +50,16 @@ namespace QLSV_3layers
 
         private void dgvLopHoc_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
                 new frmLopHoc(dgvLopHoc.Rows[e.RowIndex].Cells["malophoc"].Value.ToString()).ShowDialog();
                 LoadDSLH();
-            }    
+            }
+        }
+
+        private void dgvLopHoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
