@@ -33,6 +33,7 @@
             txtTuKhoa = new TextBox();
             label1 = new Label();
             label2 = new Label();
+            btnXuatRaWord = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvKQHT).BeginInit();
             SuspendLayout();
             // 
@@ -88,11 +89,22 @@
             label2.TabIndex = 8;
             label2.Text = "label2";
             // 
+            // btnXuatRaWord
+            // 
+            btnXuatRaWord.Location = new Point(654, 38);
+            btnXuatRaWord.Name = "btnXuatRaWord";
+            btnXuatRaWord.Size = new Size(134, 29);
+            btnXuatRaWord.TabIndex = 9;
+            btnXuatRaWord.Text = "Xuất ra word";
+            btnXuatRaWord.UseVisualStyleBackColor = true;
+            btnXuatRaWord.Click += btnXuatRaWord_Click;
+            // 
             // frmQuanLyLop
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnXuatRaWord);
             Controls.Add(label2);
             Controls.Add(dgvKQHT);
             Controls.Add(btnTraCuu);
@@ -114,5 +126,6 @@
         private TextBox txtTuKhoa;
         private Label label1;
         private Label label2;
+        private Button btnXuatRaWord;
     }
 }

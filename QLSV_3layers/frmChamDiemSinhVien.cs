@@ -9,6 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentFormat.OpenXml;
+
+using System.Drawing; // cần thêm nếu bạn lấy màu
+
 namespace QLSV_3layers
 {
     public partial class frmChamDiemSinhVien : Form
@@ -87,6 +93,7 @@ namespace QLSV_3layers
 
         private void frmChamDiemSinhVien_Load(object sender, EventArgs e)
         {
+
             dgvChamDiemSinhVien.AllowUserToAddRows = false;
             dgvChamDiemSinhVien.ReadOnly = true;
             dgvChamDiemSinhVien.AllowUserToDeleteRows = false;
@@ -190,6 +197,104 @@ namespace QLSV_3layers
             }
 
             LoadSinhVien(this.malop);
+        }
+
+        // Đặt vào btnXuatRaWord_Click:
+        private void btnXuatRaWord_Click(object sender, EventArgs e)
+        {
+            string filePath = "D:\\DiemSinhVien.docx";
+            using (WordprocessingDocument wordDocument = WordprocessingDocument.Create(filePath, WordprocessingDocumentType.Document))
+            {
+                MainDocumentPart mainPart = wordDocument.AddMainDocumentPart();
+                mainPart.Document = new Document();
+                Body body = new Body();
+
+                // ===== TÊN TRƯỜNG =====
+                Paragraph schoolName = new Paragraph(
+                    new Run(
+                        new Text("ĐẠI HỌC TÀI NGUYÊN VÀ MÔI TRƯỜNG HÀ NỘI")
+                        {
+                            Space = SpaceProcessingModeValues.Preserve
+                        }
+                    )
+                );
+                schoolName.ParagraphProperties = new ParagraphProperties(
+                    new Justification() { Val = JustificationValues.Center },
+                    new SpacingBetweenLines() { After = "100" }
+                );
+                RunProperties schoolStyle = new RunProperties(new Bold(), new FontSize() { Val = "28" });
+                schoolName.Descendants<Run>().First().RunProperties = schoolStyle;
+                body.Append(schoolName);
+
+                // ===== NGÀY THÁNG =====
+                string currentDate = $"Hà Nội, ngày {DateTime.Now.Day} tháng {DateTime.Now.Month} năm {DateTime.Now.Year}";
+                Paragraph datePara = new Paragraph(new Run(new Text(currentDate)));
+                datePara.ParagraphProperties = new ParagraphProperties(
+                    new Justification() { Val = JustificationValues.Right },
+                    new SpacingBetweenLines() { After = "300" }
+                );
+                body.Append(datePara);
+
+                // ===== TIÊU ĐỀ =====
+                Paragraph title = new Paragraph(new Run(new Text("DANH SÁCH ĐIỂM SINH VIÊN")));
+                title.ParagraphProperties = new ParagraphProperties(
+                    new Justification() { Val = JustificationValues.Center },
+                    new SpacingBetweenLines() { After = "200" }
+                );
+                RunProperties titleStyle = new RunProperties(new Bold(), new FontSize() { Val = "32" });
+                title.Descendants<Run>().First().RunProperties = titleStyle;
+                body.Append(title);
+
+                // ===== TẠO BẢNG =====
+                Table table = new Table();
+
+                TableProperties tblProperties = new TableProperties(
+                    new TableBorders(
+                        new TopBorder { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 4 },
+                        new BottomBorder { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 4 },
+                        new LeftBorder { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 4 },
+                        new RightBorder { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 4 },
+                        new InsideHorizontalBorder { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 4 },
+                        new InsideVerticalBorder { Val = new EnumValue<BorderValues>(BorderValues.Single), Size = 4 }
+                    )
+                );
+                table.AppendChild(tblProperties);
+
+                // ===== TIÊU ĐỀ CỘT =====
+                TableRow headerRow = new TableRow();
+                foreach (DataGridViewColumn column in dgvChamDiemSinhVien.Columns)
+                {
+                    TableCell cell = new TableCell(new Paragraph(new Run(new Text(column.HeaderText))));
+                    cell.TableCellProperties = new TableCellProperties(new TableCellWidth { Type = TableWidthUnitValues.Dxa, Width = "2400" });
+                    headerRow.Append(cell);
+                }
+                table.Append(headerRow);
+
+                // ===== DỮ LIỆU HÀNG =====
+                foreach (DataGridViewRow dgRow in dgvChamDiemSinhVien.Rows)
+                {
+                    if (dgRow.IsNewRow) continue;
+                    TableRow row = new TableRow();
+                    foreach (DataGridViewCell cell in dgRow.Cells)
+                    {
+                        string cellText = cell.Value?.ToString() ?? "";
+                        TableCell tableCell = new TableCell(new Paragraph(new Run(new Text(cellText))));
+                        tableCell.TableCellProperties = new TableCellProperties(new TableCellWidth { Type = TableWidthUnitValues.Dxa, Width = "2400" });
+                        row.Append(tableCell);
+                    }
+                    table.Append(row);
+                }
+
+                body.Append(table);
+
+                
+
+                // Lưu nội dung vào tài liệu
+                mainPart.Document.Append(body);
+                mainPart.Document.Save();
+            }
+
+            MessageBox.Show("Đã xuất ra Word tại: " + filePath, "Thông báo");
         }
     }
 }

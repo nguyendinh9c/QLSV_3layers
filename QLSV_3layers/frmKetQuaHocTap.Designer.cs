@@ -32,6 +32,7 @@
             txtTuKhoa = new TextBox();
             btnTraCuu = new Button();
             dgvKQHT = new DataGridView();
+            btnXuatRaWord = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvKQHT).BeginInit();
             SuspendLayout();
             // 
@@ -74,11 +75,22 @@
             dgvKQHT.Size = new Size(800, 292);
             dgvKQHT.TabIndex = 3;
             // 
+            // btnXuatRaWord
+            // 
+            btnXuatRaWord.Location = new Point(112, 26);
+            btnXuatRaWord.Name = "btnXuatRaWord";
+            btnXuatRaWord.Size = new Size(154, 29);
+            btnXuatRaWord.TabIndex = 4;
+            btnXuatRaWord.Text = "Xuất ra word";
+            btnXuatRaWord.UseVisualStyleBackColor = true;
+            btnXuatRaWord.Click += btnXuatRaWord_Click;
+            // 
             // frmKetQuaHocTap
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 369);
+            Controls.Add(btnXuatRaWord);
             Controls.Add(dgvKQHT);
             Controls.Add(btnTraCuu);
             Controls.Add(txtTuKhoa);
@@ -99,5 +111,6 @@
         private TextBox txtTuKhoa;
         private Button btnTraCuu;
         private DataGridView dgvKQHT;
+        private Button btnXuatRaWord;
     }
 }

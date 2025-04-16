@@ -59,7 +59,12 @@ namespace QLSV_3layers
         private void btnTimkiem_Click(object sender, EventArgs e)
         {
             tukhoa = txtTimkiem.Text;
-            LoadDSMH() ;
+            LoadDSMH();
+        }
+
+        private void btnXuatRaWord_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

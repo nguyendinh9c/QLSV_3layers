@@ -35,6 +35,7 @@ namespace QLSV_3layers
             btnTimKiem = new Button();
             btnChamDienm = new Button();
             btnLuu = new Button();
+            btnXuatRaWord = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvChamDiemSinhVien).BeginInit();
             SuspendLayout();
             // 
@@ -96,11 +97,22 @@ namespace QLSV_3layers
             btnLuu.UseVisualStyleBackColor = true;
             btnLuu.Click += btnLuu_Click;
             // 
+            // btnXuatRaWord
+            // 
+            btnXuatRaWord.Location = new Point(616, 58);
+            btnXuatRaWord.Name = "btnXuatRaWord";
+            btnXuatRaWord.Size = new Size(159, 29);
+            btnXuatRaWord.TabIndex = 10;
+            btnXuatRaWord.Text = "Xuất ra word";
+            btnXuatRaWord.UseVisualStyleBackColor = true;
+            btnXuatRaWord.Click += btnXuatRaWord_Click;
+            // 
             // frmChamDiemSinhVien
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnXuatRaWord);
             Controls.Add(btnLuu);
             Controls.Add(btnChamDienm);
             Controls.Add(btnTimKiem);
@@ -123,5 +135,6 @@ namespace QLSV_3layers
         private Button btnTimKiem;
         private Button btnChamDienm;
         private Button btnLuu;
+        private Button btnXuatRaWord;
     }
 }

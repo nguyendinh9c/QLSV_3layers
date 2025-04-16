@@ -41,6 +41,7 @@
             btnThemmoi = new Button();
             txtTimkiem = new TextBox();
             label1 = new Label();
+            btnXuatRaWord = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvDSGV).BeginInit();
             SuspendLayout();
             // 
@@ -158,11 +159,22 @@
             label1.Text = "Tìm kiếm";
             label1.Click += label1_Click;
             // 
+            // btnXuatRaWord
+            // 
+            btnXuatRaWord.Location = new Point(154, 26);
+            btnXuatRaWord.Name = "btnXuatRaWord";
+            btnXuatRaWord.Size = new Size(154, 29);
+            btnXuatRaWord.TabIndex = 15;
+            btnXuatRaWord.Text = "Xuất ra word";
+            btnXuatRaWord.UseVisualStyleBackColor = true;
+            btnXuatRaWord.Click += btnXuatRaWord_Click;
+            // 
             // frmDSGV
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1056, 450);
+            Controls.Add(btnXuatRaWord);
             Controls.Add(label1);
             Controls.Add(txtTimkiem);
             Controls.Add(btnThemmoi);
@@ -191,5 +203,6 @@
         private DataGridViewTextBoxColumn email;
         private DataGridViewTextBoxColumn diachi;
         private DataGridViewButtonColumn btnDelete;
+        private Button btnXuatRaWord;
     }
 }

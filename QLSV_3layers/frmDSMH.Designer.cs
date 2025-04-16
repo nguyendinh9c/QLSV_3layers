@@ -33,6 +33,7 @@
             txtTimkiem = new TextBox();
             btnTimkiem = new Button();
             btnThemmoi = new Button();
+            btnXuatRaWord = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvDSMH).BeginInit();
             SuspendLayout();
             // 
@@ -94,11 +95,22 @@
             btnThemmoi.UseVisualStyleBackColor = true;
             btnThemmoi.Click += btnThemmoi_Click;
             // 
+            // btnXuatRaWord
+            // 
+            btnXuatRaWord.Location = new Point(168, 50);
+            btnXuatRaWord.Name = "btnXuatRaWord";
+            btnXuatRaWord.Size = new Size(154, 34);
+            btnXuatRaWord.TabIndex = 7;
+            btnXuatRaWord.Text = "Xuất ra word";
+            btnXuatRaWord.UseVisualStyleBackColor = true;
+            btnXuatRaWord.Click += btnXuatRaWord_Click;
+            // 
             // frmDSMH
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnXuatRaWord);
             Controls.Add(btnThemmoi);
             Controls.Add(btnTimkiem);
             Controls.Add(txtTimkiem);
@@ -119,5 +131,6 @@
         private TextBox txtTimkiem;
         private Button btnTimkiem;
         private Button btnThemmoi;
+        private Button btnXuatRaWord;
     }
 }

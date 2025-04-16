@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentFormat.OpenXml;
+
 namespace QLSV_3layers
 {
     public partial class frmDSDiemThi : Form
@@ -18,6 +22,11 @@ namespace QLSV_3layers
         }
 
         private void btnThem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXuatRaWord_Click(object sender, EventArgs e)
         {
 
         }

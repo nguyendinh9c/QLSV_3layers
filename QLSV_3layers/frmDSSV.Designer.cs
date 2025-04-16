@@ -34,6 +34,7 @@
             btnLammoi = new Button();
             btnThemmoi = new Button();
             btnXoa = new Button();
+            btnXuatRaWord = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvSinhVien).BeginInit();
             SuspendLayout();
             // 
@@ -107,11 +108,22 @@
             btnXoa.UseVisualStyleBackColor = true;
             btnXoa.Click += btnXoa_Click;
             // 
+            // btnXuatRaWord
+            // 
+            btnXuatRaWord.Location = new Point(212, 28);
+            btnXuatRaWord.Name = "btnXuatRaWord";
+            btnXuatRaWord.Size = new Size(154, 34);
+            btnXuatRaWord.TabIndex = 6;
+            btnXuatRaWord.Text = "Xuất ra word";
+            btnXuatRaWord.UseVisualStyleBackColor = true;
+            btnXuatRaWord.Click += btnXuatRaWord_Click;
+            // 
             // frmDSSV
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1051, 522);
+            Controls.Add(btnXuatRaWord);
             Controls.Add(btnXoa);
             Controls.Add(btnThemmoi);
             Controls.Add(btnLammoi);
@@ -135,5 +147,6 @@
         private Button btnLammoi;
         private Button btnThemmoi;
         private Button btnXoa;
+        private Button btnXuatRaWord;
     }
 }

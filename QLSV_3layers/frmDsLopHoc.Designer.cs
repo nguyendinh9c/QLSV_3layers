@@ -33,6 +33,7 @@
             btnTimKiem = new Button();
             txtTimKiem = new TextBox();
             label2 = new Label();
+            btnXuatRaWord = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvLopHoc).BeginInit();
             SuspendLayout();
             // 
@@ -94,11 +95,22 @@
             label2.TabIndex = 8;
             label2.Text = "Từ khóa : ";
             // 
+            // btnXuatRaWord
+            // 
+            btnXuatRaWord.Location = new Point(287, 26);
+            btnXuatRaWord.Name = "btnXuatRaWord";
+            btnXuatRaWord.Size = new Size(154, 29);
+            btnXuatRaWord.TabIndex = 14;
+            btnXuatRaWord.Text = "Xuất ra word";
+            btnXuatRaWord.UseVisualStyleBackColor = true;
+            btnXuatRaWord.Click += btnXuatRaWord_Click;
+            // 
             // frmDsLopHoc
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(993, 450);
+            Controls.Add(btnXuatRaWord);
             Controls.Add(dgvLopHoc);
             Controls.Add(btnThem);
             Controls.Add(btnTimKiem);
@@ -119,5 +131,6 @@
         private Button btnTimKiem;
         private TextBox txtTimKiem;
         private Label label2;
+        private Button btnXuatRaWord;
     }
 }
