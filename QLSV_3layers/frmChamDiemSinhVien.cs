@@ -87,7 +87,6 @@ namespace QLSV_3layers
 
         private void frmChamDiemSinhVien_Load(object sender, EventArgs e)
         {
-
             dgvChamDiemSinhVien.AllowUserToAddRows = false;
             dgvChamDiemSinhVien.ReadOnly = true;
             dgvChamDiemSinhVien.AllowUserToDeleteRows = false;
